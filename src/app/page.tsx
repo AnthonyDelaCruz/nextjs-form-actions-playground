@@ -8,7 +8,7 @@ import { Loader2 } from "lucide-react";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col min-h-screen items-center gap-5 p-24">
+    <main className="container flex flex-col min-h-screen items-center gap-5 p-24">
       <TypographyH1>Server Actions</TypographyH1>
 
       <TypographyLead>
@@ -17,7 +17,9 @@ export default async function Home() {
         server action.
       </TypographyLead>
 
-      <Form />
+      <div className="w-1/3">
+        <Form />
+      </div>
 
       <Suspense
         fallback={
