@@ -5,6 +5,8 @@ This repository contains a demo project showcasing different ways to use server 
 - Docker
 - Docker Compose
 
+Refer to [get docker page](https://docs.docker.com/get-docker/) to install docker on your machine.
+
 ## Getting Started
 
 Create a `.env` file based on the `.env.example` file
