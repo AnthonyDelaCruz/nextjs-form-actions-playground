@@ -32,7 +32,7 @@ RUN npx prisma generate
 # Start Next.js in development mode based on the preferred package manager
 CMD \
   if [ -f yarn.lock ]; then yarn dev; \
-  elif [ -f package-lock.json ]; then npm run dev; \
+  elif [ -f package-lock.json ]; then npm run prisma:run-migrations && npm run dev; \
   elif [ -f pnpm-lock.yaml ]; then pnpm dev; \
   else npm run dev; \
   fi
