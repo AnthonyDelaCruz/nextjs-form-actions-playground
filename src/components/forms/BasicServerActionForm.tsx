@@ -1,6 +1,12 @@
 import React from "react";
 import { Input } from "../ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import prisma from "@/db/db";
 import { revalidatePath } from "next/cache";
 import SubmitButton from "../SubmitButton";
@@ -33,7 +39,11 @@ export default function BasicServerActionForm() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Basic Server Action Form</CardTitle>
+        <CardTitle>Basic Form</CardTitle>
+        <CardDescription>
+          No validation and state, just a form that invokes a server action when
+          submitted.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form className="flex flex-col gap-3" action={handleSubmit}>

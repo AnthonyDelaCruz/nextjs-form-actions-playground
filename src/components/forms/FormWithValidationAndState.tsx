@@ -44,11 +44,10 @@ export default function FormWithValidationAndState() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>
-          Server Action Form with Yup Validation and Error states.
-        </CardTitle>
+        <CardTitle>Form with validation and state.</CardTitle>
         <CardDescription>
-          Try submitting the form with invalid data.
+          Same with <span className="font-bold">Validation</span> form but with
+          client side state. Try submitting the form with invalid data.
         </CardDescription>
       </CardHeader>
       <CardContent>

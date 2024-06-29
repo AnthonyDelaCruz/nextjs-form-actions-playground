@@ -51,8 +51,12 @@ export default function FormWithValidation() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Server Action Form with Yup Validation.</CardTitle>
-        <CardDescription>View errors in the server console</CardDescription>
+        <CardTitle>Form with validation</CardTitle>
+        <CardDescription>
+          Validating form data with <span className="font-bold">yup</span>, but
+          you can use any validation library of your choice. Check the console
+          for errors.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <form className="flex flex-col gap-3" action={handleSubmit}>
