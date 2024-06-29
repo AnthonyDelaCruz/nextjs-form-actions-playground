@@ -30,13 +30,13 @@ npm install
 
 ## Running the application
 
-Build the docker image
+Build the docker images
 
 ```
 npm run docker:build
 ```
 
-Build the application using docker compose
+Start all required services using docker compose
 
 ```
 npm run docker:dev
