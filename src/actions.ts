@@ -1,59 +1,17 @@
-"use server";
+"use server"; // This tells NextJS that all methods exported from this file will be server-actions
 
 import * as yup from "yup";
 import prisma from "./db/db";
 import { revalidatePath } from "next/cache";
+import { ServerActionResponse, ResponseType } from "./types";
 
 const schema = yup.object().shape({
   email: yup.string().email("Invalid email"),
   password: yup.string().min(8, "Password must be at least 8 characters"),
 });
 
-// export async function handleUpdateUsername(formData: FormData) {
-//   try {
-//     const email = formData.get("email") as string;
-//     const password = formData.get("password") as string;
-
-//     const validation = await schema.validate(
-//       {
-//         email,
-//         password,
-//       },
-//       { abortEarly: false }
-//     );
-//   } catch (error) {
-//     const errorObj = error as yup.ValidationError;
-
-//     const errors = errorObj.inner.map((err) => ({
-//       path: err.path,
-//       message: err.message,
-//     }));
-
-//     if (error instanceof yup.ValidationError) {
-//       return {
-//         errors,
-//       };
-//     }
-//   }
-
-//   await new Promise<void>((resolve) => {
-//     setTimeout(() => {
-//       resolve();
-//     }, 4000);
-//   });
-
-//   await prisma.user.create({
-//     data: {
-//       email,
-//       password,
-//     },
-//   });
-
-//   revalidatePath("/");
-// }
-
-export async function handleSubmit(
-  prevState: { message: string },
+export async function createUserServerAction(
+  prevState: ServerActionResponse,
   formData: FormData
 ) {
   const email = formData.get("email") as string;
@@ -79,8 +37,10 @@ export async function handleSubmit(
 
     revalidatePath("/");
 
-    return { message: "User Created" };
+    return { message: "User Created", type: ResponseType.SUCCESS };
   } catch (error) {
-    return { message: "Something went wrong" };
+    console.log(error);
+
+    return { message: "Something went wrong", type: ResponseType.ERROR };
   }
 }
