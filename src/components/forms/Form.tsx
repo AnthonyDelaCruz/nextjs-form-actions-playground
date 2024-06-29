@@ -1,9 +1,13 @@
 import React from "react";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import SubmitButton from "./SubmitButton";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import SubmitButton from "../SubmitButton";
+
+/**
+ * This is an empty form that you can use as a playground for implementing server actions.
+ */
 
 export default function Form() {
   return (
@@ -30,7 +34,6 @@ export default function Form() {
             </div>
 
             <Button type="submit">Sumbit Form</Button>
-            <SubmitButton />
           </form>
         </CardContent>
       </Card>

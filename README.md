@@ -7,17 +7,29 @@ This repository contains a demo project showcasing different ways to use server 
 
 ## Getting Started
 
-- Create a `.env` file based on the `.env.example` file
+Create a `.env` file based on the `.env.example` file
+
+Use this repo's version of node
+
+```
+nvm use
+```
+
+Install dependencies
+
+```
+npm install
+```
 
 ## Running the application
 
-1. Build the docker image
+Build the docker image
 
 ```
 npm run docker:build
 ```
 
-2. Build the application using docker compose
+Build the application using docker compose
 
 ```
 npm run docker:dev
